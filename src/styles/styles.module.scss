@@ -1,0 +1,386 @@
+:global(:root) {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --link-color: gray;
+  --primary-color: #93f996;
+  --border-color: #ccc;
+  --hover-bg: #f0f0f0;
+  --hover-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.35);
+  --heart-inside-color: #ffffff;
+  --heart-stroke-color: rgb(83, 83, 83);
+  --heart-stroke-color-liked: rgb(9, 224, 70);
+  --pagination-text-color: #000000;
+  --pagination-bg: transparent;
+  --logo-color: #000000;
+}
+
+:global(body.dark) {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --link-color: #ffffff;
+  --primary-color: #81c784;
+  --border-color: #444444;
+  --hover-bg: #333333;
+  --hover-box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.1);
+  --heart-inside-color: #000000;
+  --heart-stroke-color: #bbbbbb;
+  --heart-stroke-color-liked: #4caf50;
+  --pagination-text-color: #ffffff;
+  --pagination-bg: transparent;
+  --logo-color: #81c784;
+  background-color: #1c1b22;
+  color: white;
+}
+
+:global(a) {
+  text-decoration: none;
+  color: inherit;
+}
+.reizLogo {
+  width: 100px;
+}
+.logoContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+:global(.reizLogo) {
+  width: 150px;
+  height: auto;
+  color: var(--logo-color);
+  transition: color 0.3s ease;
+  display: block;
+}
+.app {
+  font-family: 'Open Sans';
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 25px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.linksContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.showsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  justify-items: flex-start;
+  justify-content: flex-start;
+}
+
+.showComponentContainer {
+  position: relative;
+  display: flex;
+  gap: 15px;
+  transition: box-shadow 0.2s ease;
+  padding: 15px;
+  cursor: pointer;
+}
+.showComponentContainer:hover {
+  box-shadow: var(--hover-box-shadow);
+}
+
+.heartButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.pageItem {
+  margin: 0 5px;
+}
+
+.pageLink {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--pagination-text-color);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: var(--hover-bg);
+  }
+}
+
+.active .pageLink {
+  background-color: var(--primary-color);
+  color: var(--pagination-text-color);
+  cursor: default;
+}
+
+.previous .pageLink,
+.next .pageLink {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--pagination-text-color);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: var(--hover-bg);
+  }
+}
+
+.break {
+  margin: 0 5px;
+  padding: 8px 12px;
+  color: var(--text-color);
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.showDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.showInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.showPicture {
+  object-fit: cover;
+}
+
+.homeContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--link-color);
+  text-transform: uppercase;
+}
+
+.filterBar {
+  display: flex;
+  padding-bottom: 20px;
+  gap: 25px;
+}
+
+.filterItem {
+  min-width: 125px;
+}
+
+.filtersContainer {
+  display: flex;
+  gap: 25px;
+}
+
+.sort {
+  width: 215px;
+}
+
+.activeLink {
+  text-decoration: underline;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  margin-top: auto;
+}
+
+.linkWrapper {
+  text-decoration: none;
+  color: inherit;
+}
+
+.IndividualShowContainer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  grid-template-areas:
+    'poster summary'
+    'poster info';
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.poster {
+  grid-area: poster;
+}
+
+.summary {
+  grid-area: summary;
+}
+
+.info {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  p {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.showPoster {
+  width: 100%;
+  height: 1000px;
+  object-fit: cover;
+}
+
+.showInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.favoriteLink {
+  text-decoration: none underline;
+  text-transform: uppercase;
+  color: var(--link-color);
+  font-size: 13px;
+}
+
+.officialWebsiteLink {
+  color: var(--primary-color);
+}
+
+.favoritesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  .headerContainer {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 20px;
+    box-sizing: border-box;
+  }
+  .showPoster {
+    height: 450px;
+    width: 300px;
+  }
+  .IndividualShowContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'poster summary'
+      'info info';
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .poster {
+    grid-area: poster;
+    img {
+      width: 100%;
+    }
+  }
+  .summary {
+    grid-area: summary;
+  }
+  .info {
+    grid-area: info;
+  }
+  .filtersContainer {
+    justify-content: center;
+  }
+  .showsGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100vw;
+    justify-items: center;
+  }
+  .showComponentContainer {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .showsGrid {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    .showComponentContainer {
+      flex-direction: column-reverse;
+      width: 100vw;
+      padding: 0;
+    }
+  }
+  .homeContainer {
+    width: 100vw;
+  }
+  .filtersContainer {
+    flex-direction: column;
+    width: 100vw;
+    gap: 5px;
+    .filterBar {
+      gap: 5px;
+    }
+  }
+  .IndividualShowContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 0;
+    .poster {
+      img {
+        object-fit: contain;
+        height: auto;
+      }
+    }
+    .summary {
+      h1 {
+        margin: 0;
+      }
+    }
+  }
+}
