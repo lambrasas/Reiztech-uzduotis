@@ -34,7 +34,7 @@ const NotFound = () => {
           this.
         </a>
       </p>
-      <p>Or maybe you wanna go home?</p>
+      <p style={{ color: 'white' }}>Or maybe you wanna go home?</p>
       <Link style={{ color: 'white' }} to="/">
         Home
       </Link>
