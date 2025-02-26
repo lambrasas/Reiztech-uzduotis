@@ -28,11 +28,14 @@ const SortBar: React.FC<SortBarProps> = ({ sortOption, setSortOption }) => {
   return (
     <div className={styles.sort}>
       <ReactSelect
+        components={{
+          DropdownIndicator: () => null,
+          IndicatorSeparator: () => null,
+        }}
         styles={getCustomSelectStyles(theme)}
         options={sortOptions}
         value={sortOptions.find((option) => option.value === sortOption)}
         onChange={(option) => setSortOption(option?.value || 'none')}
-        placeholder="Sort by"
         isClearable={false}
       />
     </div>

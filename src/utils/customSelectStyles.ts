@@ -25,4 +25,14 @@ export const getCustomSelectStyles = (theme: 'light' | 'dark') => ({
     ...provided,
     color: theme === 'dark' ? '#e0e0e0' : '#000000',
   }),
+  valueContainer: (provided: any) => ({
+    ...provided,
+    justifyContent: 'left',
+    padding: '0 20px',
+  }),
+  placeholder: (provided: any) => ({
+    ...provided,
+    opacity: 1,
+    color: theme === 'dark' ? '#e0e0e0' : '#000000',
+  }),
 })

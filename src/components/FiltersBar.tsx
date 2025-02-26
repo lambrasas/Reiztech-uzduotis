@@ -52,6 +52,10 @@ const FiltersBar: React.FC<FiltersBarProps> = ({
     <div className={styles.filterBar}>
       <div className={styles.filterItem}>
         <ReactSelect
+          components={{
+            DropdownIndicator: () => null,
+            IndicatorSeparator: () => null,
+          }}
           className={styles.ReactSelect}
           styles={getCustomSelectStyles(theme)}
           options={selectGenreOptions}
@@ -61,19 +65,27 @@ const FiltersBar: React.FC<FiltersBarProps> = ({
           onChange={(selected: OnChangeValue<Option, true>) => {
             setGenreFilter(selected ? selected.map((o) => o.value) : [])
           }}
-          placeholder="Genre filter"
+          placeholder="Genres filter"
           isMulti
           isClearable={true}
         />
       </div>
       <div className={styles.filterItem}>
         <ReactSelect
+          components={{
+            DropdownIndicator: () => null,
+            IndicatorSeparator: () => null,
+          }}
           className={styles.ReactSelect}
           styles={getCustomSelectStyles(theme)}
           options={selectStatusOptions}
-          value={selectStatusOptions.find(
-            (option) => option.value === statusFilter
-          )}
+          value={
+            statusFilter === 'All'
+              ? null
+              : selectStatusOptions.find(
+                  (option) => option.value === statusFilter
+                )
+          }
           onChange={(option) =>
             setStatusFilter((option as Option)?.value || 'All')
           }
